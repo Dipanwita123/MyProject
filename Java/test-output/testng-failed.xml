@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="EdgeTest(failed)">
+    <parameter name="browser" value="edge"/>
     <classes>
-      <class name="practicedemo.dataproviderdemo">
+      <class name="practicedemo.NewTest">
         <methods>
-          <include name="browsing"/>
+          <include name="closingbrowser"/>
+          <include name="multiplebrowser"/>
+          <include name="search"/>
         </methods>
-      </class> <!-- practicedemo.dataproviderdemo -->
+      </class> <!-- practicedemo.NewTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- EdgeTest(failed) -->
+  <test thread-count="5" parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="practicedemo.NewTest">
+        <methods>
+          <include name="closingbrowser"/>
+          <include name="multiplebrowser"/>
+          <include name="search"/>
+        </methods>
+      </class> <!-- practicedemo.NewTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
